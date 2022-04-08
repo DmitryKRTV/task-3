@@ -10,7 +10,7 @@ const secretKey = ecdh.generateKeys("hex");
 const options = process.argv.slice(2);
 
 if (options.length < 3) {
-  console.log('Please type in three or more elements\nExample: rock paper scissors lizard Spock');
+  console.log('Please type in three or more elements\nExample: rock paper scissors lizard Spock car plane');
   process.exit();
 }; 
 
