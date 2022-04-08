@@ -71,10 +71,12 @@ const getChoice = () => {
     playerChoice = prompt('Please enter your choice: ')
     if (+playerChoice <= options.length) return +playerChoice;
     else if (playerChoice ==='?') return playerChoice;
-    else if (+playerChoice === 0) return;
+    else if (playerChoice === 0) return 0;
+    else return '!';
 }
 
 function startGame() {
+
     while(true) {
     const computerChoice = getComputerChoice();
 
@@ -86,9 +88,9 @@ function startGame() {
     getMenu();
 
     const playerChoice = getChoice()
-    if (playerChoice === 0) break;
-    else if (playerChoice === '?') {showTable(); continue}
-    else if (playerChoice < 0) break;
+    if (+playerChoice === 0) break;
+    if (playerChoice === '?') {showTable(); continue}
+    if (playerChoice === '!') continue
 
     console.log(`Your move: ${options[playerChoice -1]}\n` +
     `Computer move: ${options[computerChoice]}\n` +
